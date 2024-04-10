@@ -17,7 +17,7 @@ public class Main {
         if (clientDevice == 0 && clientDeviceYear < 2015) {
             System.out.println("«Установите облегченную версию приложения для iOS по ссылке».");
         } else if (clientDevice == 0 && clientDeviceYear >= 2015) {
-            System.out.println("«Установите облегченную версию приложения для iOS по ссылке».");
+            System.out.println("«Установите версию приложения для iOS по ссылке».");
         } else if (clientDevice == 1 && clientDeviceYear < 2015) {
             System.out.println("«Установите облегченную версию приложения для Android по ссылке».");
         } else if (clientDevice == 1 && clientDeviceYear >= 2015) {
@@ -34,22 +34,21 @@ public class Main {
         }
 
         System.out.println("\nTask 4");
-        int deliveryDistance = 101;
-        int days = 1;
+        int deliveryDistance = 95;
+        int daysDelivery = 1;
 
-        if (deliveryDistance <= 20) {
-            System.out.println("«Потребуется дней: " + days + "»");
-        } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
-            days = days + 1;
-            System.out.println("«Потребуется дней: " + days + "»");
-        } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
-            days = days + 2;
-            System.out.println("«Потребуется дней: " + days + "»");
-        } else {
+        if (deliveryDistance > 100) {
             System.out.println("«Приносим свои извинения, доставка в ваш регион не осуществляется.»");
+            return;
         }
-        // Я прямо-таки чувствую, что эту задачу можно улучшить и сократить, но совсем не понимаю как(
-        // Так что извините за нагромождение.
+        if (deliveryDistance > 20) {
+            daysDelivery++;
+        }
+        if (deliveryDistance > 60) {
+            daysDelivery++;
+        }
+        System.out.println("«Потребуется дней: " + daysDelivery + "»");
+
 
         System.out.println("\nTask 5");
         int monthNumber = 12;
